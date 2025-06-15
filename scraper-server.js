@@ -124,6 +124,8 @@ app.post('/scrape', async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log('Servidor de scraping multi-nivel (extracción de texto) activo en http://localhost:3000/scrape');
+const port = process.env.PORT || 3000;
+
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Servidor de scraping activo en el puerto ${port}`);
 });
